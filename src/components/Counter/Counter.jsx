@@ -2,16 +2,21 @@ import { useEffect, useState, useReducer } from 'react'
 
 const pinkRGB = `rgb(236, 72, 153)`
 const initialCount = 0
+const ACTIONS = {
+  INCREMENT: 'increment',
+  DECREMENT: 'decrement',
+  RESET: 'reset'
+}
 
 function countReducer(count, action) {
   switch (action.type) {
-    case 'increment': {
+    case ACTIONS.INCREMENT: {
       return count + 1
     }
-    case 'decrement': {
+    case ACTIONS.DECREMENT: {
       return count - 1
     }
-    case 'reset': {
+    case ACTIONS.RESET: {
       return initialCount
     }
     default: {
